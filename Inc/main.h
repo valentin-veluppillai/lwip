@@ -64,6 +64,7 @@ extern "C" {
 /* USER CODE BEGIN Includes */
 #include <string.h>
 #include "uart.h"
+#include "httpserver-netconn.h"
 
 /* USER CODE END Includes */
 

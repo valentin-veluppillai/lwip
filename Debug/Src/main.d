@@ -38,6 +38,7 @@ Src/main.o: ../Src/main.c ../Inc/main.h \
  ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_ll_exti.h \
  ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_ll_usart.h \
  ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_ll_pwr.h \
+ ../Inc/httpserver-netconn.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  ../Inc/FreeRTOSConfig.h \
@@ -174,6 +175,8 @@ Src/main.o: ../Src/main.c ../Inc/main.h \
 ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_ll_usart.h:
 
 ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_ll_pwr.h:
+
+../Inc/httpserver-netconn.h:
 
 ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h:
 

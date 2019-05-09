@@ -118,6 +118,7 @@
 "Middlewares/Third_Party/LwIP/system/OS/sys_arch.o"
 "Src/ethernetif.o"
 "Src/freertos.o"
+"Src/httpserver-netconn.o"
 "Src/lwip.o"
 "Src/main.o"
 "Src/stm32f7xx_hal_msp.o"

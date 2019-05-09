@@ -8,7 +8,7 @@ pbuf.c:665:1:pbuf_header	8	static
 pbuf.c:675:1:pbuf_header_force	8	static
 pbuf.c:715:1:pbuf_free	24	static
 pbuf.c:248:1:pbuf_alloc	32	static
-pbuf.c:493:1:pbuf_realloc	16	static
+pbuf.c:493:1:pbuf_realloc	24	static
 pbuf.c:800:1:pbuf_clen	0	static
 pbuf.c:820:1:pbuf_ref	8	static
 pbuf.c:840:1:pbuf_cat	16	static

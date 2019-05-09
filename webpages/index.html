@@ -8,66 +8,64 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
 <!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/litera/bootstrap.min.css" rel="stylesheet" integrity="sha384-D/7uAka7uwterkSxa2LwZR7RJqH2X6jfmhkJ0vFPGUtPyBMF2WMq9S+f9Ik5jJu1" crossorigin="anonymous">
 
 <!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bohttps://stackpath.bootstrapcdn.com/bootswatch/4.3.1/lux/bootstrap.min.cssotstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <script type="text/javascript">
   $(document).ready(function() {
-  	$(".led").click(function(e) {
+  	$(".event").click(function(e) {
   	    $.get($(this).attr("id"));
   	});
 	function refreshValues() {
-       $.get("btn1", function(res) {
-           if(res == "OFF")
-           	 $("#usr-btn").removeClass("alert-success").addClass("alert-info");
-           else
-             $("#usr-btn").removeClass("alert-info").addClass("alert-success");
-             
-           $("#usr-btn").find("b").html(res);           
-        }); 
-        $.get("adc", function(res) {
-           $("#mcu-temp").find("b").html(res);           
-        }); 
-	   setTimeout(refreshValues, 250); 
+                $.get("data1", function(res) {
+                        $("#data1").find("b").html(res);
+                });
+                $.get("data2", function(res) {
+                        $("#data2").find("b").html(res);
+                });
+                setTimeout(refreshValues, 250);
 	}
 	setTimeout(refreshValues, 250);
   });
-  
-  
+
+
 </script>
-<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=2 user-scalable=no">
 </head>
 <body>
 <div class="container">
 	<div class="panel panel-default">
-	  <div class="panel-heading">Nucleo LEDs</div>
+	  <div class="panel-heading">Trigger Events</div>
 	  <div class="panel-body">
 	    <div class="row">
-		  <div class="col-md-6 cell">
-		     <button type="button" class="btn btn-default btn-block led" id="led1">LED1</button>
-		  </div>
-		  <div class="col-md-6 cell">
-		  	 <button type="button" class="btn btn-default btn-block led" id="led2">LED2</button>
-		  </div>	  	 
-		  <div class="col-md-6 cell">
-		  	 <button type="button" class="btn btn-default btn-block led" id="led3">LED3</button>
-		  </div>
+		<div class="col-md-6 cell">
+	                <button type="button" class="btn btn-default btn-block event" id="event1">Event 1</button>
+		</div>
+		<div class="col-md-6 cell">
+		  	<button type="button" class="btn btn-default btn-block event" id="event2">Event 2</button>
+		</div>
+		<div class="col-md-6 cell">
+		  	<button type="button" class="btn btn-default btn-block event" id="event3">Event 3</button>
+		</div>
+                <div class="col-md-6 cell">
+		  	<button type="button" class="btn btn-default btn-block event" id="event4">Event 4</button>
+		</div>
 		</div>
 	  </div>
 	</div>
 	<div class="panel panel-default">
-	  <div class="panel-heading">Nucleo USER BUTTON</div>
+	  <div class="panel-heading">Measurement 1</div>
 	  <div class="panel-body">
-	     <div id="usr-btn" class="alert alert-info" role="alert"><b>OFF</b></div>
+	     <div id="data1" class="alert-info" role="alert" style="text-align:center"><b>Heck</b> </div>
 	  </div>
-	</div>	
-	<div class="panel panel-default">
-	  <div class="panel-heading">MCU Temperature</div>
+	</div>
+        <div class="panel panel-default">
+	  <div class="panel-heading">Measurement 2</div>
 	  <div class="panel-body">
-	     <div id="mcu-temp" class="alert alert-warning" role="alert"><b>TEMP</b></div>
+	     <div id="data2" class="alert-success" role="alert" style="text-align:center"><b>idk</b> </div>
 	  </div>
-	</div>	
+	</div>
 </div>
 </body>
 </html>
