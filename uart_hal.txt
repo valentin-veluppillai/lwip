@@ -1,0 +1,20 @@
+void rxtxSTTask() {
+	uint8_t byteToSend[DBG_LINE_SIZE], byteToSave;
+	int waitingBytes = 0;
+	while(1) {
+		if(0 < (waitingBytes = uxQueueMessagesWaiting( queueTxST ))) {
+			if(waitingBytes > DBG_LINE_SIZE)	waitingBytes = DBG_LINE_SIZE;
+			for(int i = 0; i < waitingBytes; i++)	xQueueReceive(queueTxST, byteToSend + i, 0);
+			while(!flagUSART3TxCplt);
+			flagUSART3TxCplt = 0;
+			HAL_UART_Transmit_IT(&ST_USART, byteToSend, waitingBytes);
+		}
+		else {
+			HAL_UART_Recieve_IT(&ST_USART, byteToSave, 1);
+		}
+		if(flagUSART3RxCplt){
+
+		}
+	}
+	vTaskDelete(NULL);
+}

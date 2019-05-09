@@ -1,0 +1,8 @@
+uart.c:61:6:uartTask	48	static
+uart.c:76:6:uartInit	8	static
+uart.c:159:6:stprint	48	static
+uart.c:171:6:stclear	8	static
+uart.c:87:6:commandParserTask	72	static
+uart.c:175:6:isrprint	48	static
+uart.c:187:6:HAL_UART_TxCpltCallback	8	static
+uart.c:192:6:UART_CharReception_Callback	16	static
